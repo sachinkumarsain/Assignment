@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+</head>
+
+<body>
+    <div class="wapper">
+        <input class="names" type="text" placeholder="Type your friends name">
+        <button class="addarray">Add To Array</button>
+        <button class="printarray">Print Array</button>
+        <p></p>
+    </div>
+    <script>
+        let names = document.querySelector('.names');
+        let addarray = document.querySelector('.addarray');
+        let printarray = document.querySelector('.printarray');
+        let para = document.querySelector('p')
+
+        let temp = [];
+        addarray.onclick = () => {
+            temp.push(names.value);
+            console.log(temp);
+            names.value = '';
+            names.focus()
+        }
+        let tank = [];
+        printarray.onclick = () => {
+            let i = 0;
+            let x = setInterval(() => {
+                if (i == temp.length-1) {
+                    para.innerHTML += temp[randomIndex()];
+                    i++
+                    clearInterval(x)
+                }
+                else {
+                    para.innerHTML += temp[randomIndex()] + ", ";
+                    i++
+                }
+            }, 1000)
+        };
+
+            function randomIndex() {
+                let random = Math.floor(Math.random()*temp.length );
+                if (tank.includes(random)) {
+                    return randomIndex();
+                }
+                else {
+                    tank.push(random);
+                    return random
+                }
+            }
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danching Random</title>
+</head>
+
+<body>
+    <div class="wapper">
+        <div class="box">
+            <h1>1234567890</h1>
+            <div class="btn">
+                <button>Start Dance</button>
+                <button>ThakGay</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let number = document.querySelector('h1');
+        let dance = document.querySelector('button:first-of-type');
+        let thakgay = document.querySelector('button:last-of-type');
+        let originalnumber=number.innerHTML;
+        // console.log(thakgay)
+        let interval = "";
+        dance.onclick = () => {
+            let numbersplitted = number.innerHTML.split("");
+            interval = setInterval(() => {
+                let lastletter = numbersplitted.pop();
+                numbersplitted.unshift(lastletter);
+                // console.log(numbersplitted)
+                number.innerHTML=numbersplitted.join('')
+
+            }, 1000)
+
+        }
+        thakgay.onclick=()=>{
+            number.innerHTML=originalnumber;
+            clearInterval(interval);
+        }
+    </script>
+</body>
+
+</html>

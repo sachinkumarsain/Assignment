@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <style>
+        .wapper {
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+        }
+
+        .box {
+            border-radius: 4px;
+            color: white;
+            width: 150px;
+            background: #0F2027;
+            box-shadow: 0 0 3px 3px rgb(72, 62, 62);
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            text-align: center;
+            padding: 15px 0px;
+
+        }
+
+        input {
+            height: 30px;
+            width: 80%;
+            margin: 0 auto;
+            background: #bdc3c7;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2c3e50, #bdc3c7);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin-bottom: 10px;
+            border-radius: 2px;
+            color: rgb(255, 255, 255);
+            padding-left: 5px;
+
+
+        }
+        button{
+            box-shadow: 0 0 3px 3px rgb(74, 68, 68);
+            background: #bdc3c7;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2c3e50, #bdc3c7);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            border:0.2px solid #2c3e50 ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wapper">
+        <div class="box">
+            <input  type="text">
+            <button>Click Me</button>
+        </div>
+    </div>
+    <script>
+        let wapper=document.querySelector('.wapper');
+        let input =document.querySelector('input');
+        let button =document.querySelector('button');
+        let box =document.querySelector('.box');
+
+
+        button.onclick=()=>{
+            wapper.style.background=input.value;
+            box.style.background=input.value;
+            input.style.background=input.value;
+            button.style.background=input.value;
+
+            
+            input.focus();
+            input.value=''
+
+        }
+    </script>
+
+</body>
+
+</html>
